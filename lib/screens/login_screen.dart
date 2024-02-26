@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -39,9 +40,9 @@ class _LoginScreenState extends State<LoginScreen> {
             height: 60,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(children: [
-              SizedBox(
+              const SizedBox(
                 height: 28,
               ),
               TextFieldInput(
@@ -50,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ispassword: false,
                 keyboardType: TextInputType.emailAddress,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               TextFieldInput(
@@ -96,9 +97,9 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 60,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(children: [
-                SizedBox(
+                const SizedBox(
                   height: 28,
                 ),
                 TextFieldInput(
@@ -107,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ispassword: false,
                   keyboardType: TextInputType.emailAddress,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
                 TextFieldInput(
@@ -129,11 +130,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                   ),
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        const Color.fromARGB(218, 226, 37, 24),
+                      ),
+                    ),
                     child: const Text(
                       'Login',
                       style: TextStyle(
@@ -141,15 +147,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontSize: 16,
                       ),
                     ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                        const Color.fromARGB(218, 226, 37, 24),
-                      ),
-                    ),
                   ),
                 ),
-                SizedBox(height: 24),
-                Row(
+                const SizedBox(height: 24),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('forgot your login details? '),
@@ -162,17 +163,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 Flexible(flex: 0, child: Container()),
-                SizedBox(height: 24),
-                Divider(thickness: 2),
+                const SizedBox(height: 24),
+                const Divider(thickness: 2),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 12),
+                  padding: const EdgeInsets.symmetric(vertical: 12),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Don\'t have an account?'),
+                      const Text('Don\'t have an account?'),
                       TextButton(
                         onPressed: () {},
-                        child: Text(
+                        child: const Text(
                           'Sign up',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -180,18 +181,18 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                     ],
                   ),
                 ),
-                Row(
+                const Row(
                   children: [
                     Flexible(child: Divider(thickness: 2)),
                     Text(" OR "),
                     Flexible(child: Divider(thickness: 2)),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -200,7 +201,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         "https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png",
                         width: 40,
                         height: 40),
-                    Text("Sign in with Google")
+                    const Text("Sign in with Google")
                   ],
                 )
               ]),
