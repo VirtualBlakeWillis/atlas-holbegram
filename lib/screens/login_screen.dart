@@ -20,62 +20,9 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   @override
-  Widget initState() {
+  void initState() {
     _passwordVisible = true;
     super.initState();
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 28,
-          ),
-          const Text(
-            'Holbegram',
-            style: TextStyle(fontFamily: "Billabong", fontSize: 50),
-          ),
-          const Image(
-            image: AssetImage('assets/images/logo.webp'),
-            width: 80,
-            height: 60,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(children: [
-              const SizedBox(
-                height: 28,
-              ),
-              TextFieldInput(
-                controller: TextEditingController(),
-                hintText: 'Email',
-                ispassword: false,
-                keyboardType: TextInputType.emailAddress,
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              TextFieldInput(
-                controller: TextEditingController(),
-                hintText: 'Password',
-                ispassword: !_passwordVisible,
-                keyboardType: TextInputType.visiblePassword,
-                suffixIcon: IconButton(
-                  alignment: Alignment.bottomLeft,
-                  icon: Icon(
-                    _passwordVisible ? Icons.visibility : Icons.visibility_off,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _passwordVisible = !_passwordVisible;
-                    });
-                  },
-                ),
-              ),
-            ]),
-          ),
-        ],
-      ),
-    ));
   }
 
   @override

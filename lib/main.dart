@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/login_screen.dart';
+import 'screens/signup_screen.dart';
 
 /* task 0, change main function to below */
 void main() {
@@ -71,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return LoginScreen();
+    return SignUp();
+    // return LoginScreen();
   }
 }
