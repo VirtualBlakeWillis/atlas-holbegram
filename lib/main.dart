@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 import 'screens/signup_screen.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+
 /* task 0, change main function to below */
-void main() {
-  runApp(const MyApp());
-}
-// Future main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();
+// void main() {
 //   runApp(const MyApp());
 // }
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

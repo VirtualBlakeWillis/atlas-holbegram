@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 import 'signup_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:holbegram/methods/auth_methods.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -82,7 +84,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      AuthMethods()
+                          .login(
+                              email: emailController.text,
+                              password: passwordController.text)
+                          .then((value) => {
+                                if (value == "Success")
+                                  {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        content: Text("Login Success"),
+                                      ),
+                                    )
+                                  }
+                              });
+                    },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
                         const Color.fromARGB(218, 226, 37, 24),
